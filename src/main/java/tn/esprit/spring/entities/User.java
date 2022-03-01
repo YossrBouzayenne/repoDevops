@@ -21,6 +21,7 @@ public class User implements Serializable {
 	//commentaire test 2
 	//commentaire push from eclipse 
 	
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
