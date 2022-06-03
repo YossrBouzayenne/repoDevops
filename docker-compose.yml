@@ -10,7 +10,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=root
     ports:
-      - 3306:3308
+      - 3306:3306
     volumes:
       - db:/var/lib/mysql
   app:
@@ -19,7 +19,7 @@ services:
     build: ./
     restart: on-failure
     env_file: ./.env
-    container_name: app_app
+    container_name: app
     ports:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
     environment:
@@ -35,5 +35,20 @@ services:
       - .m2:/root/.m2
     stdin_open: true
     tty: true
+  sonarqube:
+    image: sonarqube:community
+    depends_on:
+      - mysqldb
+      - app
+    container_name: sonarqube
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    volumes:
+      - .m2:/opt/sonarqube/extensions
+      - .m2:/opt/sonarqube/logs
+    ports:
+      - "9000:9000"
 volumes:
   db:
