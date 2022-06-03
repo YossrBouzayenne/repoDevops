@@ -34,7 +34,7 @@ public class UserServiceImplTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
 		User u = new User("Hamza","KAABI", d, Role.INGENIEUR);
-		User userAdded = us.addUser(u);
+		User userAdded = us.addUesr(u);
 		Assertions.assertEquals(u.getLastName() , userAdded.getLastName());
 		
 	}
