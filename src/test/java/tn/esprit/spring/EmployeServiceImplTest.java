@@ -29,14 +29,14 @@ public class EmployeServiceImplTest {
 	e.setNom("yosr");
 	e.setPrenom("bouzayene");
 	int employeeId = service.addOrUpdateEmploye(e);
-	//log.trace("trace : emplye added sucessfuly !");
+	log.trace("trace : emplye added sucessfuly !");
 	int id = 1;
 	if( "".equals(service.getEmployePrenomById(employeeId).trim())) 	
-	//log.error("we don't have departement with this " + id);
+	log.error("we don't have departement with this " + id);
 	
 	assertNotNull(service.getEmployePrenomById(employeeId));
-	//log.info("this is one employee of  " + service.getAllEmployes().size() +" employees");	
-	//log.warn("********************************End Method Test Add Employee ******************************************************");
+	log.info("this is one employee of  " + service.getAllEmployes().size() +" employees");	
+	log.warn("********************************End Method Test Add Employee ******************************************************");
 
 	}
 	
