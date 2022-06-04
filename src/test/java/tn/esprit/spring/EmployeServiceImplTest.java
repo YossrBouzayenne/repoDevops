@@ -25,9 +25,9 @@ public class EmployeServiceImplTest {
 	@Test
 	public void testAddEmployee() {	
 	Employe e = new Employe();
-	e.setEmail("majallouz@vermeg.com");
-	e.setNom("JALLOUZ");
-	e.setPrenom("Mohamed Ali");
+	e.setEmail("ybouzayene@vermeg.com");
+	e.setNom("yosr");
+	e.setPrenom("bouzayene");
 	int employeeId = service.addOrUpdateEmploye(e);
 	//log.trace("trace : emplye added sucessfuly !");
 	int id = 1;
